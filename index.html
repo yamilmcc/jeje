@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora</title>
+
+<style>
+body {
+  font-family: Arial;          
+  text-align: center;         
+  margin-top: 50px;            
+}
+input {
+  width: 200px;               
+  height: 30px;                
+  font-size: 18px;           
+  text-align: right;          
+}
+button {
+  width: 45px;                 
+  height: 45px;                
+  font-size: 18px;            
+  margin: 3px;                 
+}
+</style>
+</head>
+
+<body>
+<h2>Calculadora Básica</h2>
+<input type="text" id="pantalla" readonly><br><br>
+
+<div>
+  <!-- Fila 1 -->
+  <button onclick="agregar('7')">7</button>
+  <button onclick="agregar('8')">8</button>
+  <button onclick="agregar('9')">9</button>
+  <button onclick="agregar('/')">/</button><br>
+
+  <!-- Fila 2 -->
+  <button onclick="agregar('4')">4</button>
+  <button onclick="agregar('5')">5</button>
+  <button onclick="agregar('6')">6</button>
+  <button onclick="agregar('*')">*</button><br>
+
+  <!-- Fila 3 -->
+  <button onclick="agregar('1')">1</button>
+  <button onclick="agregar('2')">2</button>
+  <button onclick="agregar('3')">3</button>
+  <button onclick="agregar('-')">-</button><br>
+
+  <!-- Fila 4 -->
+  <button onclick="agregar('0')">0</button>
+  <button onclick="agregar('.')">.</button>
+  <button onclick="calcular()">=</button>
+  <button onclick="agregar('+')">+</button><br><br>
+
+  <button onclick="limpiar()">C</button>
+</div>
+
+<script>
+let pantalla = document.getElementById("pantalla");
+
+function agregar(valor){
+  pantalla.value += valor;  // Concatena el valor al texto actual
+}
+function calcular(){
+  pantalla.value = eval(pantalla.value); 
+}
+
+/* Función para borrar todo el contenido de la pantalla */
+function limpiar(){
+  pantalla.value = ""; // Deja el campo vacío
+}
+</script>
+</body>
+</html>
